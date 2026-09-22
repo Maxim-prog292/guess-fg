@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Угадай место происхождения денег</title>
+  <link rel="stylesheet" href="styles.css?v=20260913-1830">
+  <link rel="stylesheet" href="screen-template.css?v=20260913-1830">
+  <link rel="stylesheet" href="figma-level.css?v=20260913-1830">
+  <link rel="stylesheet" href="exhibit-ui.css?v=20260913-1830">
+  <link rel="stylesheet" href="museum-v2.css?v=20260913-1830">
+</head>
+<body>
+  <main class="app" id="app">
+    <header class="header">
+      <h1>Угадай место происхождения денег</h1>
+      <div class="progress" id="progress"></div>
+    </header>
+
+    <section class="game">
+      <section class="question-panel">
+        <div class="guess-meta">
+          <p><span>Вид денег:</span><strong id="money"></strong></p>
+          <p><span>Период:</span><strong id="period"></strong></p>
+          <p><span>Подсказка:</span><strong id="feature"></strong></p>
+        </div>
+        <div class="options" id="options"></div>
+        <div class="feedback" id="feedback"></div>
+      </section>
+
+      <aside class="reveal-panel">
+        <canvas id="canvas" width="720" height="520"></canvas>
+        <article class="story" id="story">Нажмите на место происхождения - появятся картинка и история.</article>
+      </aside>
+    </section>
+
+    <footer class="footer">
+      <button class="secondary" id="restart">Заново</button>
+      <button class="primary" id="next" disabled>Следующий уровень</button>
+    </footer>
+
+    <section class="start-panel" id="startPanel" aria-live="polite">
+      <div class="start-content">
+        <p class="start-kicker">История денег</p>
+        <h2>Угадай место происхождения</h2>
+        <p>
+          Определите, где появилась древняя форма денег, и откройте историческую справку.
+        </p>
+        <button id="startButton">Старт</button>
+      </div>
+    </section>
+
+    <section class="guess-end-panel" id="endPanel" aria-live="assertive" hidden>
+      <div class="guess-end-card">
+        <p class="guess-end-eyebrow">Итог</p>
+        <h2 id="endTitle">Игра завершена</h2>
+        <div class="result-score" id="endScore">0 / 0</div>
+        <p id="endText">Можно пройти еще раз: порядок вопросов и вариантов изменится.</p>
+        <button id="endRestartButton" type="button">Начать заново</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="exhibit-ui.js?v=20260913-1830"></script>
+  <script src="script.js?v=20260913-1830"></script>
+</body>
+</html>
